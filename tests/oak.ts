@@ -3,9 +3,8 @@ import { Snelm } from "../mod.ts";
 
 const app = new Application();
 
-// Configuring Snelm for the Oak framework
+// Creating and initializing a Snelm object and setting Oak as the framework
 const snelm = new Snelm("oak");
-await snelm.init();
 
 // Snelm Middleware for Oak
 app.use((ctx, next) => {

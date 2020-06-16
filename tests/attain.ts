@@ -5,7 +5,6 @@ const app = new App();
 
 // Configuring Snelm for Attain
 const snelm = new Snelm("attain");
-await snelm.init();
 
 // Snelm Middleware for Attain
 const snelmMiddleware = (req: Request, res: Response) => {

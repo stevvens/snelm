@@ -1,13 +1,13 @@
 import config from './config.ts';
 import { CspOptions } from './types.ts';
-import * as Bowser from './bowser/src/bowser.js';
+import Bowser from './bowser/src/bowser.js';
 
 function goodBrowser () {
   return ['Content-Security-Policy'];
 }
 
 interface HandlersByBrowserName {
-  [browserName: string]: (browser: Bowser.Parser.Parser, options: CspOptions) => string[];
+  [browserName: string]: (browser: any, options: CspOptions) => string[];
 }
 
 const handlersByBrowserName: HandlersByBrowserName = {
@@ -98,7 +98,7 @@ const handlersByBrowserName: HandlersByBrowserName = {
   },
 };
 
-export default function getHeaderKeysForBrowser (browser: Bowser.Parser.Parser | undefined, options: CspOptions) {
+export default function getHeaderKeysForBrowser (browser: any | undefined, options: CspOptions) {
   if (!browser) {
     return config.allHeaders;
   }

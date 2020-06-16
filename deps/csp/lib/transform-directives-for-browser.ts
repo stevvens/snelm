@@ -1,4 +1,4 @@
-import * as Bowser from './bowser/src/bowser.js';
+import Bowser from './bowser/src/bowser.js';
 import { CamelCaseDirectives as Directives, SourceListDirective } from './types.ts';
 
 interface BasePolicy {
@@ -44,7 +44,7 @@ function transformDirectivesForPreCsp1Firefox (directives: Directives, basePolic
 }
 
 export default function transformDirectivesForBrowser (
-  browser: Bowser.Parser.Parser | undefined,
+  browser: any,
   directives: Directives,
 ): Directives {
   // For now, Firefox is the only browser that needs to be transformed.

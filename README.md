@@ -23,7 +23,6 @@ const app = new Application();
 
 // Creating and initializing a Snelm object and setting Oak as the framework
 const snelm = new Snelm("oak");
-await snelm.init();
 
 // Passing the request and response object into the snelm function. That's all
 // you need to do to use Snelm! Now all responses objects will have the
@@ -224,7 +223,6 @@ const app = new Application();
 
 // Configuring Snelm for the Oak framework
 const snelm = new Snelm("oak");
-await snelm.init();
 
 // Snelm Middleware for Oak
 app.use((ctx, next) => {
@@ -252,7 +250,6 @@ const app = new Application();
 
 // Configuring Snelm for ABC
 const snelm = new Snelm("abc");
-await snelm.init();
 
 // Snelm Middleware for ABC
 const SnelmMiddleware: MiddlewareFunc = next => c => {
@@ -272,7 +269,7 @@ app
 ```
 
 
-### Alsosaur
+### Alosaur
 
 Snelm Middleware example for Alosaur:
 
@@ -284,7 +281,6 @@ import { Snelm } from "https://deno.land/x/snelm/mod.ts";
 
 // Configuring Snelm for Alosaur
 const snelm = new Snelm("alosaur");
-await snelm.init();
 
 // Snelm Middleware for Alosaur
 @Middleware(new RegExp('/'))
@@ -339,7 +335,6 @@ const server = pogo.server({ port : 55555 });
 
 // Configuring Snelm for Pogo
 const snelm = new Snelm("pogo");
-await snelm.init();
 
 server.router.get('/', (request, handler) => {
 	// Using Snelm in a route
@@ -362,7 +357,6 @@ const app = new Aqua(8000);
 
 // Configuring Snelm for Aqua
 const snelm = new Snelm("aqua");
-await snelm.init();
 
 // Snelm Middleware for Aqua
 app.register((request, response) => {
@@ -387,7 +381,6 @@ const app = new App();
 
 // Configuring Snelm for Attain
 const snelm = new Snelm("attain");
-await snelm.init();
 
 // Snelm Middleware for Attain
 const snelmMiddleware = (req: Request, res: Response) => {
@@ -400,8 +393,6 @@ app.use(snelmMiddleware, (req, res) => {
 });
 
 app.listen({ port: 3500 });
-
-console.log("http://localhost:3500");
 ```
 
 # License

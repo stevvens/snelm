@@ -11,6 +11,13 @@ import ieNoOpen from "./deps/ienoopen/index.ts";
 import referrerPolicy from "./deps/referrer-policy/index.ts";
 import xssProtection from "./deps/x-xss-protection/index.ts";
 
+import abc from "./frameworks/abc.ts"
+import alosaur from "./frameworks/alosaur.ts"
+import aqua from "./frameworks/aqua.ts"
+import attain from "./frameworks/attain.ts"
+import oak from "./frameworks/oak.ts"
+import pogo from "./frameworks/pogo.ts"
+
 export class Snelm {
 	
 	private _frameworkName: string;
@@ -20,11 +27,32 @@ export class Snelm {
 	constructor(frameworkName: string, options: any = {}) {
 		this._frameworkName = frameworkName;
 		this._options = options;
-	}
-	
-	public async init() {
-		this._fameworkLib = await import(`./frameworks/${this._frameworkName}.ts`);
-		this._fameworkLib = this._fameworkLib.default;
+
+		switch (this._frameworkName) {
+			case "abc":
+				this._fameworkLib = abc;
+				break;
+
+			case "alosaur":
+				this._fameworkLib = alosaur;
+				break;
+
+			case "aqua":
+				this._fameworkLib = aqua;
+				break;
+
+			case "attain":
+				this._fameworkLib = attain;
+				break;
+
+			case "oak":
+				this._fameworkLib = oak;
+				break;
+			
+			case "pogo":
+				this._fameworkLib = pogo;
+				break;
+		}
 	}
 	
 	public snelm(request: any, response: any) : any {

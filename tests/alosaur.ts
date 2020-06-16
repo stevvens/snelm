@@ -5,7 +5,6 @@ import { Snelm } from "../mod.ts";
 
 // Configuring Snelm for Alosaur
 const snelm = new Snelm("alosaur");
-await snelm.init();
 
 // Snelm Middleware for Alosaur
 @Middleware(new RegExp('/'))

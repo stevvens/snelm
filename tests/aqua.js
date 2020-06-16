@@ -5,7 +5,6 @@ const app = new Aqua(8000);
 
 // Configuring Snelm for Aqua
 const snelm = new Snelm("aqua");
-await snelm.init();
 
 // Snelm Middleware for Aqua
 app.register((request, response) => {

@@ -5,7 +5,6 @@ const server = pogo.server({ port : 55555 });
 
 // Configuring Snelm for Pogo
 const snelm = new Snelm("pogo");
-await snelm.init();
 
 server.router.get('/', (request, handler) => {
 	// Using Snelm in a route
