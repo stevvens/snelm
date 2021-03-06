@@ -30,7 +30,7 @@ const snelm = new Snelm("oak");
 app.use((ctx, next) => {
     ctx.response = snelm.snelm(ctx.request, ctx.response);
 
-    next();
+    return next();
 });
 
 app.use((ctx) => {
